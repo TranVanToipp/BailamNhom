@@ -1,0 +1,6 @@
+C:\Users\acer\Desktop\ASP.net-main\ASP.net-main\Common\bin\Debug\Common.dll
+C:\Users\acer\Desktop\ASP.net-main\ASP.net-main\Common\bin\Debug\Common.pdb
+C:\Users\acer\Desktop\ASP.net-main\ASP.net-main\Common\obj\Debug\Common.csproj.AssemblyReference.cache
+C:\Users\acer\Desktop\ASP.net-main\ASP.net-main\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\acer\Desktop\ASP.net-main\ASP.net-main\Common\obj\Debug\Common.dll
+C:\Users\acer\Desktop\ASP.net-main\ASP.net-main\Common\obj\Debug\Common.pdb

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Project_Dien_Thoai.Models.LoaiSanPham>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-md-3">
+                <strong class="text-uppercase text-danger">Danh sách loại sản phẩm</strong>
+            </div>
+            <div class="col-md-6 text-end">
+                <a href="@Url.Action("create","Loaisanpham")" class="btn btn-sm btn-success">content</a>
+            </div>
+        </div>
+    </div>
+    <div class="card-body"></div>
+</div>
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenLoaiSP)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenLoaiSP)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.LoaiSP }) |
+            @Html.ActionLink("Details", "Details", new { id=item.LoaiSP }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.LoaiSP })
+        </td>
+    </tr>
+}
+
+</table>

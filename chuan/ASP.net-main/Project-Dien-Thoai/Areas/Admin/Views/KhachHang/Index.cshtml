@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card py-5">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-md-6">
+                <strong class="text-uppercase text-danger">Danh sách Khách Hàng</strong>
+            </div>
+        </div>
+    </div>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th class="p-3">Mã Khách Hàng</th>
+                    <th class="p-3">Tên Khách Hàng</th>
+                    <th class="p-3">Ngày Sinh</th>
+                    <th class="p-3">Giới Tính</th>
+                    <th class="p-3">Số Điện Thoại</th>
+                    <th class="p-3">Địa Chỉ</th>
+                    <th class="p-3">Email</th>
+                    <th class="p-3" style="width:180px;">Chức năng</th>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.MaKH</td>
+                        <td>@item.TenKH</td>
+                        <td>@item.NgaySinh</td>
+                        <td>@item.GioiTinh</td>
+                        <td>+84 @item.SODTKH</td>
+                        <td>@item.DiaChiKH</td>
+                        <td>@item.EmailKH</td>
+                        <td class="text-center">
+                            <a href="@Url.Action("Edit","KhachHang", new { @id = item.MaKH})"
+                               class="btn btn-sm btn-primary">Edit</a>
+                            <a href="@Url.Action("Delete","KhachHang", new { @id = item.MaKH })"
+                               class="btn btn-sm btn-danger">Xóa</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

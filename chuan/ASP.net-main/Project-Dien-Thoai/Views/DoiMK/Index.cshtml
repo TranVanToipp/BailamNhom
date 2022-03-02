@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutNguoiDung.cshtml";
+}
+
+<body>
+    @using (Html.BeginForm("Index", "DoiMK",new { @tenDN = Session["User"] }, FormMethod.Post))
+    {<div class="container">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h2 class="text-center">Đổi mật khẩu</h2>
+                    <div style="color: red;text-align:center;">@ViewBag.Error</div>
+                </div>
+                <form action="" method="post">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label for="usr1">Mật khẩu hiện tại:</label>
+                            <input required type="password" class="form-control" id="pws" name="pws" minlength="6">
+                        </div>
+                        <div class="form-group">
+                            <label for="usr2">Mật khẩu mới:</label>
+                            <input required type="password" class="form-control" id="newpws" name="newpws" minlength="6">
+                        </div>
+                        <div class="form-group">
+                            <label for="usr3">Nhập lại mật khẩu mới:</label>
+                            <input required type="password" class="form-control" id="rnewpws" name="rnewpws">
+                        </div>
+                        <button type="submit" class="btn btn-success">Đổi mật khẩu</button>
+                    </div>
+                </form>
+            </div>
+        </div>}
+    </body>

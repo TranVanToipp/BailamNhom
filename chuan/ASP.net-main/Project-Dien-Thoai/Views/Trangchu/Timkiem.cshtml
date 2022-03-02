@@ -1,0 +1,152 @@
+﻿
+@{
+    ViewBag.Title = "Timkiem";
+    Layout = "~/Views/Shared/_LayoutNguoiDung.cshtml";
+}
+
+<section class="header clearfix" >
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 logo">
+                <img src="~/Public/img/logo 1.svg" alt="Logo" class="img-fluid" />
+            </div>
+            <div class="col-md-5">
+
+                <form class="d-flex">
+                    @using (Html.BeginForm("Timkiem", "Trangchu"))
+                    {
+                        <input class="form-control me-2" name="txtTimKiem" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn cong" type="submit"><i class="fas fa-search"></i></button>
+                    }
+                </form>
+            </div>
+            <div class="grup col-md-2">
+                <div class="cart">
+                    @if (Session["User"].Equals(""))
+                    {<a href="@Url.Action("Index", "Authen")"><span class="cart-text">GIỎ HÀNG</span></a>
+                        <div class="logo-cart-box"><div class="logo-cart">0</div></div>}
+                    else
+                    {
+                        if (Session["LTaiKhoan"].Equals("Khách Hàng"))
+                        {
+                            <a href="@Url.Action("Index", "GioHang", new { @makh = Session["Ma_User"] })"><span class="cart-text">GIỎ HÀNG</span></a>
+                            <div class="logo-cart-box"><div class="logo-cart">@Html.Action("GioHangPartial", "GioHang", new { @makh = Session["Ma_User"] })</div></div>}
+                    }
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="dangnhap login">
+                    @if (Session["User"].Equals(""))
+                    {
+                        <a id="users" class="User_dangnhap" href="@Url.Action("Index", "Authen")">
+                            <div>Đăng nhập</div>
+                        </a>
+                        <a id="users" class="User_dangki" href="@Url.Action("Index", "Logout")">
+                            <div>Đăng kí</div>
+                        </a>
+                    }
+                    else
+                    {
+                        <a id="users" class="dangki" href="@Url.Action("thoat", "Authen")">
+                            <div>@Session["userName"]</div>
+                        </a>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="main mainmenu clearfix bg-main">
+        <nav class="navbar navbar-expand-lg navbar-light py-3">
+            <div class="main container-fluid">
+                <ul class="navMenu">
+                    <li>
+                        <a class="Menu-list" href="@Url.Action("Index","Trangchu")">Trang chủ</a>
+                    </li>
+                    <li>
+                        <a class="Menu-list" href="@Url.Action("Index","SanphamDT")">Điện thoại</a>
+                    </li>
+                    <li>
+                        <a class="Menu-list" href="@Url.Action("Contact","Trangchu")">Liên hệ</a>
+                    </li>
+                    <li>
+                        @if (Session["LTaiKhoan"].Equals("Admin"))
+                        {
+                            <a class="Menu-list" href="@Url.Action("","Admin")">
+                                Quản lí
+                            </a>
+                        }
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+</section>
+@RenderBody()
+<section class="footer clearfix bf-footer py-4">
+    <div class="container">
+        <div class="d-grid footer-items">
+            <div class="row ">
+                <div class="col-md-3">
+                    <span class="text-light">ĐIỆN THOẠI</span>
+                    <div class="text-light">
+                        Nhóm điện thoại mới được phát triển, đứng đầu trong
+                        chuỗi cữa hàng bán lẻ lớn nhất Việt Nam, Sẽ mang đến cho người dùng những trải
+                        nghiệm tuyệt vời nhất
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <span class="text-light">SẢN PHẨM ĐÁNH GIÁ CAO</span>
+                </div>
+                <div class="col-md-3">
+                    <span class="text-light">THÔNG TIN HƯỚNG DẪN</span>
+                    <br />
+                    <a class="Address" href="#">Giao hàng và thanh toán</a>
+                    <br />
+                    <a class="Address" href="#">Chế độ nhập hàng</a>
+                    <br />
+                    <a class="Address" href="#">Nhập hàng và đổi trả </a>
+                    <br />
+                    <a class="Address" href="#">Đập hộp và nhận quà</a>
+                    <br />
+                    <a class="Address" href="#">Chính sách bảo mật</a>
+                </div>
+                <div class="col-md-3">
+                    <span class="text-light">ĐỊA CHỈ CỮA HÀNG</span>
+                    <div class="text-light">Số 01 ,Hồ chí minh</div>
+                    <div class="text-light">Số 02 ,Hà Nội</div>
+                    <div class="text-light">Số 03 ,Quảng ngãi</div>
+                    <div class="text-light">Số 04 ,Quy nhơn</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="copyright clearfix bf-footer py-2">
+    <div class="container">
+        <div class="row">
+            <span class="duong border-top border-light"></span>
+            <div class="col-md-6 text-light">
+                Bản quyền thuộc về NHÓM ĐIỆN THOẠI
+            </div>
+            <div class="col-md-6 text-light">
+
+            </div>
+        </div>
+    </div>
+</section>
+<script src="~/Scripts/bootstrap.bundle.min.js"></script>
+@RenderSection("footer", required: false)
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+            $(document).ready(function () {
+                $(window).scroll(function () {
+                    if ($(this).scrollTop()) {
+                        $('header').addClass('sticky');
+                    } else {
+                        $('header').re('sticky');
+                    }
+                });
+
+            });
+</script>

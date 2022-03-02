@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+html, body {
+    scroll-behavior: smooth;
+}
+:root {
+    --white-color-: #fff;
+    --black-color-: #000;
+}
+.tag-a {
+    text-decoration: none;
+    color: #777;
+}
+.tag-li {
+    list-style: none;
+}
+@keyframes fadein {
+    from {
+        opacity: 0.8;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes anima {
+    from {
+        opacity: 0.8;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+.x {
+    height: 500px;
+}
+hr {
+    margin: 0;
+}
+span {
+    display: block;
+}

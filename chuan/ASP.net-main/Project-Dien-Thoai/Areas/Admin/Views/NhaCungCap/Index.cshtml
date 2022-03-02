@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Project_Dien_Thoai.Models.NhaCungCap>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<h2>Index</h2>
+<div class="card py-5">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-md-6">
+                <strong class="text-uppercase text-danger">Danh sách Nhà Cung Cấp</strong>
+            </div>
+            <div class="col-md-6 text-end">
+                <a href="@Url.Action("create","NhaCungCap")" class="btn btn-sm btn-success">Thêm</a>
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        <table>
+            <thead>
+                <tr>
+                    <th class="p-3">Mã Nhà Cung Cấp</th>
+                    <th class="p-3">Tên Nhà Cung Cấp</th>
+                    <th class="p-3">Số Điện Thoại</th>
+                    <th class="p-3">Địa Chỉ</th>
+                    <th class="p-3">Email</th>
+                    <th class="p-3" style="width:180px;">Chức năng</th>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.MaNCC</td>
+                        <td>@item.TenNCC</td>
+                        <td>+84 @item.SDTNCC</td>
+                        <td>@item.DiaChiNCC</td>
+                        <td>@item.EmailNCC</td>
+                        <td class="text-center">
+                            <a href="@Url.Action("Edit","NhaCungCap", new { @id = item.MaNCC})"
+                               class="btn btn-sm btn-primary">Edit</a>
+                            <a href="@Url.Action("Delete","NhaCungCap", new { @id = item.MaNCC })"
+                               class="btn btn-sm btn-danger">Xóa</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

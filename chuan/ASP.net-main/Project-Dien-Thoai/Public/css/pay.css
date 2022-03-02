@@ -1,0 +1,264 @@
+.form_pay {
+    display: flex;
+    width: 100%;
+}
+
+.infor-pay-box,.your-order-box {
+    margin-top: 40px;
+}
+
+.infor-pay-title,.your-order-title {
+    font-size: 18px;
+    font-weight: 700;
+    padding-bottom: 15px;
+}
+
+.infor-pay-name {
+    display: flex;
+    margin-top: 20px;
+}
+
+.infor-pay-name label {
+    font-size: 15px;
+    margin-right: 10px;
+    font-weight: 600;
+}
+
+.infor-pay-name span {
+    font-size: 18px;
+}
+
+.infor-pay-phone {
+    font-size: 15px;
+    margin-right: 10px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.infor-pay-phone input {
+    width: 230px;
+    height: 45px;
+    outline: none;
+    border: 1px solid #ddd;
+    padding-left: 20px;
+    font-size: 15px;
+}
+
+.address-giaohang > label {
+    font-weight: 600;
+}
+
+.address-giaohang {
+    font-size: 15px;
+    margin-right: 10px;
+    
+    margin-top: 20px;
+}
+
+.address-main {
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.address-main label {
+    display: block;
+    min-width: 190px;
+    display: flex;
+    align-items: center;
+}
+
+.quan-huyen-main {
+    margin: 15px 0;
+}
+
+.address-main select {
+    min-width: 225px;
+    height: 40px;
+    outline: none;
+    font-size: 15px;
+}
+
+.address-main select option {
+    background-color: #eaeaea;
+}
+
+.infor-note {
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.infor-note input {
+    display: block;
+    margin-left: 30px;
+    width: 412px;
+    margin-top: 15px;
+    outline: none;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 80px;
+    font-size: 15px;
+}
+
+.pay_san_pham {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+    border-bottom: 4px solid #eaeaee;
+    padding-bottom: 10px;
+}
+
+.pay_san_pham-main {
+    border-bottom: 2px solid #eaeaee;
+}
+
+.pay_san_pham_item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.pay_san_pham_item:first-child {
+    padding-top: 15px;
+}
+
+.pay_san_pham_item:last-child {
+    padding-bottom: 15px;
+}
+
+.title-product {
+    display: flex;
+}
+
+.title-product p {
+    margin-left: 8px;
+    font-weight: 600;
+}
+
+.thanhtoan_discount {
+    font-weight: 600;
+}
+
+.pay_giao_hang {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+.pay_giao_hang label {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.pay_giao_hang {
+    padding-bottom: 15px;
+    border-bottom: 2px solid #eaeaee;
+}
+
+.total_money-title {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.total-main {
+    font-weight: 700;
+    margin-top: -5px;
+}
+
+.total_money {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.pay_total_money {
+    padding-bottom: 15px;
+    border-bottom: 3.5px solid #eaeaee;
+}
+
+.phuong-thuc-pay {
+    padding-top: 20px;
+}
+
+.phuong-thuc-pay-items-box {
+    border-bottom: 1px solid #eaeaee;
+}
+
+.phuong-thuc-pay-items {
+    display: flex;
+    padding: 8px 0;
+    
+}
+
+.phuong-thuc-pay-items input {
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.abcd {
+    transition: all ease 0.3s;
+}
+
+.pay-box {
+    margin-top: 7px;
+    transform: translateY(-10px);
+    height: 0;
+    overflow: hidden;
+}
+
+.block {
+    transform: translateY(0);
+    height: max-content;
+    overflow: inherit; 
+    padding-bottom: 5px;
+}
+
+.dat_hang {
+    font-size: 17px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #000;
+    border: none;
+    cursor: pointer;
+}
+
+.phi-giao-hang {
+    display: flex;
+}
+
+.pay_giao_hang label {
+    padding-top: 5px;
+}
+
+.none {
+    display: none;
+}
+
+.block-cart {
+    display: block;
+}
+
+@media  screen and (max-width:740px) {
+    .form_pay {
+        display: block;
+    }
+    .col-pay {
+        height: auto;
+    }
+    .infor-pay-box, .your-order-box {
+        padding-left: 15px;
+    }
+    .address-main label {
+        min-width: 140px;
+    }
+    .address-main {
+        margin-left: 0;
+    }
+    .infor-note input {
+        margin-left: 0;
+        width: 365px;
+    }
+}

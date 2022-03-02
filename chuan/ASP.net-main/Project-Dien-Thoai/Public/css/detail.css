@@ -1,0 +1,101 @@
+.detail {
+    padding-top: 30px;
+}
+.detail-title {
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 600;
+    padding-bottom: 40px;
+}
+.total_money {
+    margin-top: 25px;
+    display: flex;
+    font-size: 18px;
+    font-weight: 600;
+    justify-content: flex-end;
+}
+.infor-title {
+    font-weight: 600;
+}
+.ma-order,.phone_number,.address {
+    margin-top: 10px;
+    display: flex;
+}
+.ma-order p,.phone_number p,.address p{
+    font-weight: 600;
+}
+.ma-order span,.phone_number span,.address span{
+    font-weight: 600;
+    min-width: 180px;
+}
+.success-btn {
+display: flex;
+justify-content: center;
+margin-top: 15px;
+}
+.view-detail ,.continue-buy {
+    padding: 8px 17px;
+    font-size: 17px;
+    color: #fff;
+    background-color: #000;
+    margin: 0 7px;
+    cursor: pointer;
+}
+button {
+    border: navajowhite;
+    background-color: transparent;
+}
+.success-btn {
+    justify-content: flex-start;
+}
+.not-order {
+    margin: auto;
+    width: max-content;
+    padding-top: 80px;
+    font-weight: 600;
+    font-size: 30px;
+}
+.cart-empty-main-title {
+    display: flex;
+    justify-content: center;
+    margin-top:25px;
+    font-size: 25px;
+    font-weight: 600;
+    margin-right: 45px;
+}
+.continue_view {
+    display: flex;
+    margin-right: 20px;
+    padding: 6px 7px;
+    border: 2px solid #000;
+    cursor: pointer;
+}
+.continue_view span {
+    color: #000;
+    font-weight: 600;
+    margin-left: 5px;
+    font-size: 15px;
+}
+.continue_view:hover {
+    background-color: #000;
+}
+.continue_view:hover span{
+    color: #fff;
+}
+.continue_view:hover i{
+    color: #fff;
+}
+.continue_view1 {
+    width:200px;
+    margin-top:40px; 
+    margin-left:200px
+}
+@media  screen and (max-width:740px) {
+    .not-order {
+        font-size: 22px;
+    }
+    .continue_view1{
+        margin-left: 115px;
+    }
+}  

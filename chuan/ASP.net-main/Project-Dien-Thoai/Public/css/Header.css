@@ -1,0 +1,43 @@
+﻿.DangkiDangNhap{
+    margin-left: 82px;
+    font-size:20px;
+    text-decoration: none;
+    
+}
+.DangNhap {
+    text-decoration: none;
+    color: #808080;
+}
+
+.Dangky {
+    text-decoration: none;
+    margin-right: 10px;
+    color: #808080;
+}
+.btn:hover {
+    color: #f9981d;
+}
+.fas {
+    color: #f9981d;
+    font-size: 25px;
+}
+
+.fa-search {
+
+}
+.navMenu {
+    display:flex;
+    list-style-type: none;
+    font-size: 22px;
+    margin-top: 4px;
+    
+}
+
+.Menu-list {
+    text-decoration: none;
+    color: #ffede0;
+    margin-right: 15px;
+}
+.a:hover{
+    color: #808080;
+}

@@ -1,0 +1,49 @@
+﻿/*Nav*/
+.main {
+    background-color: #FF6700;
+}
+.bf-footer {
+    background-color: #24272e;
+}
+/*Tìm kiếm*/
+.eader-search-form {
+    width: 225px;
+    height: 30px;
+    font-size: 10px;
+    margin-left: 19px;
+    border-radius: 10px;
+}
+
+/*form đăng nhập*/
+.dangnhap {
+    display: flex;
+    margin-left: 111px;
+    margin-top: -36px;
+}
+.login{
+    list-style-type: none;
+}
+.header {
+    background-color: #FF6700;
+}
+
+.dangki {
+    margin-left: 30px;
+}
+#users {
+    color: #ddd; 
+    font-size: 20px;
+    text-decoration: none;
+}
+/*Giỏ hàng*/
+
+/*....................FOOTER/*....................*/
+.footer-items {
+    padding: 40px 0;
+    border-bottom: 0.1px solid #ddd;
+}
+
+.Address {
+    text-decoration: none;
+}
+

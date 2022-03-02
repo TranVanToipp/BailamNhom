@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <title>@Page.Title</title>
+    @RenderSection("head", required: false)
+</head>
+<style>
+    .container {
+        width: 500px;
+        margin-top: 50px;
+    }
+</style>
+<body>
+    @using (Html.BeginForm("Index", "XacNhan", new { @TenDN=Session["User"] },FormMethod.Post))
+    {<div class="container">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h2 class="text-center">Xác nhận tài khoản</h2>
+                    <div style="color: red;text-align:center;">@ViewBag.Error</div>
+                </div>
+                <form action="" method="post">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label for="usr">Nhập mã xác nhận:</label>
+                            <input required type="text" class="form-control" id="xacnhan" name="xacnhan">
+                        </div>
+                        <button type="submit" class="btn btn-success">Xác nhận</button>
+                    </div>
+                </form>
+            </div>
+        </div>}
+        @RenderBody()
+    </body>
+</html>

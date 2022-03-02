@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "Phanhang";
+    Layout = "~/Views/Shared/_LayoutNguoiDung.cshtml";
+}
+<div class="shop-body">
+    <div class="grid wide">
+        <div class="roww">
+            <div class="col l-3 shop-danhmuc">
+                <div class="shop-danhmuc-header">
+                    <span>ĐIỆN THOẠI</span>
+                </div>
+
+                <div class="shop-reducing-price">
+                    <span class="shop-reducing-title">HÃNG SẢN XUẤT</span>
+                    <div class="shop-reducing-items-box">
+                        <form action="/" method="post">
+                            <div class="product-type">
+                                @foreach (var item in ViewBag.loaisp)
+                                {
+                                    <a href="@Url.Action("Phanhang","SanPhamDT",new { @loai = item.LoaiSP})" class="tag-a">
+                                        <span>@item.TenLoaiSP</span>
+                                    </a>
+                                }
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col l-9 shop-sanpham">
+                <div class="shop-sanpham-title">
+                    <span class="page-now" data-title="#"></span>
+
+                </div>
+                <div class="roww">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col l-4 c-6 product-selling-items shop-cuahang-items">
+                            <div class="product-selling-box-img">
+                                <a href="@Url.Action("Index","ChiTietSP",new { @masp=item.MaSP})"><img class="product-selling-img" src="~/Image/@item.HinhSP" alt="Hình sản phẩm"></a>
+                            </div>
+                            <div class="product-selling-info">
+                                <div class="product-selling-name">
+                                    <span>@item.TenSP</span>
+                                </div>
+                                <div class="product-selling-price">
+                                    <div class="product-selling-price-now">@String.Format("{0:0,0}", item.GiaDauRa)<sup>đ</sup></div>
+                                </div>
+                                <div class="btn-add-cart-box">
+                                    @if (Session["User"].Equals(""))
+                                    {
+                                        <a class="tag-a link-add-cart" href="@Url.Action("Index","Authen")">
+                                            <span class="btn-add-cart">THÊM VÀO GIỎ HÀNG</span>
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a class="tag-a link-add-cart" href="@Url.Action("add_Cart","GioHang",new {@makh=Session["Ma_User"],@masp=item.MaSP,@strURL=Request.Url.ToString()})">
+                                            <span class="btn-add-cart">THÊM VÀO GIỎ HÀNG</span>
+                                        </a>}
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Project_Dien_Thoai.Models.HoaDon>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+<div class="card py-5">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-md-6">
+                <strong class="text-uppercase text-danger">Danh sách Hóa Đơn</strong>
+            </div>
+        </div>
+        <form method="post">
+            <select id="hd" name="hoadon" class="btn btn-success">
+                <option value="">Tất Cả Hóa Đơn</option>
+                <option value="Đang Kiểm Duyệt">Hóa Đơn Đang Duyệt</option>
+                <option value="Thành Công">Hóa Đơn Thành Công</option>
+                <option value="Đơn Đã Hủy">Hóa Đơn Đã Hủy</option>
+            </select><button name="xem" type="submit" class="btn btn-success" style="margin-top: -2px;margin-left: 10px;">Xem Hóa Đơn</button>
+        </form>
+    </div>
+    <div class="text-center">
+        <table>
+            <thead>
+                <tr>
+                    <th class="p-3">Mã HĐ</th>
+                    <th class="p-3">Mã SP</th>
+                    <th class="p-3">Mã KH</th>
+                    <th class="p-3">Số Lượng</th>
+                    <th class="p-3">Trạng Thái</th>
+                    <th class="p-3">Ngày HĐ</th>
+                    <th class="p-3">Thành Tiền</th>
+                    <th class="p-3" style="width:180px;">Chức năng</th>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.MaHoaDon</td>
+                        <td>@item.MaSP</td>
+                        <td>@item.MaKH</td>
+                        <td>@item.SoLuongXuat</td>
+                        <td>@item.TrangThaiXuat</td>
+                        <td>@item.NgayHD</td>
+                        <td>@item.ThanhTien</td>
+                        <td class="text-center">
+                            <a href="@Url.Action("Duyet_Don", "HoaDon", new { @mahd = item.MaHoaDon })"
+                               class="btn btn-sm btn-primary">Duyệt Hóa Đơn</a>
+                            <a href="@Url.Action("Huy_Don", "HoaDon", new { @mahd = item.MaHoaDon })"
+                               class="btn btn-sm btn-danger">Hủy Đơn Hàng</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

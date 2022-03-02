@@ -1,0 +1,107 @@
+﻿@using Project_Dien_Thoai.Models
+@model List<sgiohang>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutNguoiDung.cshtml";
+}
+<link href="~/Public/css/Cart.css" rel="stylesheet" />
+<link href="~/Public/css/chitietsanpham.css" rel="stylesheet" />
+
+<div class="grid wide">
+    <div class="product-selling-title cart_youself-box">
+        <hr>
+        <span class="cart_youself">GIỎ HÀNG CỦA BẠN</span>
+        <hr>
+    </div>
+    <div class="cart_main">
+        <div class="row">
+            <div class="col l-3 c-12 cart_pc" style="position: relative;">
+
+                <table class="cart_table">
+                    <tbody>
+                        <tr class="text-center">
+                            <th></th>
+                            <th>Tên SP</th>
+                            <th>Hình ảnh</th>
+                            <th class="card_price">Đơn Giá</th>
+                            <th>Số Lượng</th>
+                            <th>Thành Tiền</th>
+                        </tr>
+                        @foreach (var item in Model)
+                        {
+                            using (Html.BeginForm("update_Cart", "GioHang", new { @makh = item.makh, @masp = item.masp }))
+                            {
+                                <tr class="text-center">
+                                    <td><a href="@Url.Action("delete_Cart", "GioHang", new { @makh = item.makh, @masp = item.masp })">X</a></td>
+                                    <td>@item.tensp</td>
+                                    <td><img src="~/Image/@item.hinhsp" width="50" height="50" /></td>
+                                    <td>@String.Format("{0:0,0}", item.dongia) VND</td>
+                                    <td>@Html.TextBox("txtsoluong", item.soluong, new { style = "width: 30px;" })</td>
+                                    <td>@String.Format("{0:0,0}", item.thanhtien) VND</td>
+                                    <td>
+                                        <button type="submit" class="update_cart opacity">
+                                            <span style="padding-top: 3px;font-size:13px;">CẬP NHẬT </span>
+                                        </button>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+                <div class="cart_product_foot">
+                    <a href="../" class="tag-a">
+                        <div class="continue_view">
+                            <i class="fas fa-long-arrow-alt-left"></i>
+                            <span>TIẾP TỤC XEM SẢN PHẨM</span>
+                        </div>
+                    </a>
+                    <a href="@Url.Action("Index","TTDonHang" ,new {@makh = ViewBag.Makh})" class="tag-a">
+                        <div class="continue_view">
+                            <i class="fas fa-calendar-week"></i>
+                            <span>Thông tin đơn hàng</span>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+            <div class="col l-4 c-10 cart_right">
+                <div class="cart_right-header">
+                    <span>CỘNG GIỎ HÀNG</span>
+                </div>
+                <div class="total_money">
+                    <div class="total_money-title">
+                        <span>
+                            Tổng tiền:@{ double tongtien = 0; foreach (var tong in Model)
+                                {
+                                    tongtien += tong.thanhtien;
+                                }
+                                @String.Format("{0:0,0}", tongtien)} VND
+                        </span>
+                    </div>
+
+                </div>
+                <a href="@Url.Action("DatHang","GioHang",new { @makh = Session["Ma_User"] })" class="tag-a ">
+                    <div class="thanh-toan">
+                        <span>Đặt Hàng</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="cart-empty-main">
+        <div class="box-img-cart-empty">
+            <img src="" alt="">
+        </div>
+        <div class="cart-empty-main-title">
+            <span>GIỎ HÀNG TRỐNG</span>
+        </div>
+        <a href="../" class="tag-a">
+            <div class="continue_view" style="width:200px;margin-top:40px; margin-left:15px;">
+                <i class="fas fa-long-arrow-alt-left"></i>
+                <span>QUAY LẠI CỬA HÀNG</span>
+            </div>
+        </a>
+    </div>
+</div>
+
+

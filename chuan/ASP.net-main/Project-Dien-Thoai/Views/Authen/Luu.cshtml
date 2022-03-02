@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Luu";
+    Layout = "~/Views/Shared/_LayoutAuthen.cshtml";
+}
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h2 class="text-center">Đăng nhập tài khoản</h2>
+            <div style="color: red;text-align:center;"> @ViewBag.Error</div>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <label for="TenDN">Tên Đăng Nhập hoặc Email:</label>
+                <input required type="text" class="form-control" id="TenDN" name="TenDN">
+            </div>
+            <div class="form-group">
+                <label for="MatKhau">Mật khẩu:</label>
+                <input required type="password" class="form-control" id="MatKhau" name="MatKhau" minlength="6">
+            </div>
+            <div class="form-group">
+                <span><a href="@Url.Action("Index","Logout")">Đăng kí tài khoản mới</a></span>
+                <span><a href="#" class="btn-forget">Quên Mật Khẩu</a></span>
+            </div>
+            <div class="form-group">
+                <input class="luu" id="chkluu" type="checkbox" />
+                <label for="chkluu">Lưu</label>
+            </div>
+            <button class="btn btn-success">Đăng nhập</button>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,324 @@
+.cart_youself {
+    font-size: 24px !important;
+}
+.product-selling-title {
+    margin-top: 20px !important;
+}
+.cart_table {
+    margin-top: 30px;
+    position: relative;
+}
+.cart_table::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 94%;
+    height: 3px;
+    background-color: #eaeaee;
+    top: 25px;
+}
+.cart_product {
+    display: flex;
+}
+.cart_body {
+    margin-top: 30px;
+}
+.cart-items-remove-box {
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+}
+.cart_product {
+    width: 270px;
+}
+.cart-items-name {
+    display: flex;
+    align-items: center;
+    font-weight: 100;
+    font-size: 16px;
+    text-align: left;
+    margin-left: 10px;
+}
+.cart_price {
+    width: 120px;
+}
+.num {
+    width: 160px;
+    display: flex;
+    justify-content: center;
+}
+.total_money_details {
+    width: 160px;
+}
+.cart_product_foot {
+    display: flex;
+    margin-top: 60px;
+}
+.continue_view {
+    display: flex;
+    margin-right: 20px;
+    padding: 6px 7px;
+    border: 2px solid #000;
+    cursor: pointer;
+}
+.continue_view span {
+    color: #000;
+    font-weight: 600;
+    margin-left: 5px;
+    font-size: 15px;
+}
+.continue_view:hover {
+    background-color: #000;
+}
+.continue_view:hover span{
+    color: #fff;
+}
+.continue_view:hover i{
+    color: #fff;
+}
+.update_cart {
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #000;
+    color: #fff;
+    padding: 6px 7px;
+    cursor: pointer;
+}
+.opacity {
+    opacity: 0.5;
+    cursor: no-drop;
+}
+.loader {
+    border: 9px solid #f3f3f3; /* Light grey */
+    border-top: 9px solid #000; /* Blue */
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    display: none;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+
+.cart_right {
+    padding-top: 30px;
+    position: relative;
+}
+.cart_right::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 94%;
+    left: -20px;
+    background-color: #eaeaee;
+}
+.cart_right-header {
+    font-size: 17px;
+    font-weight: 600;
+    width: 100%;
+    position: relative;
+}
+.cart_right-header::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #eaeaee;
+    top: 25px;
+}
+.tam-tinh {
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1.5px solid #eaeaee;
+}
+.tam-tinh-money {
+    font-weight: 600;
+}
+.giao-hang {
+    padding-top: 30px;
+    padding-bottom: 10px;
+    border-bottom: 1.5px solid #eaeaee;
+    display: flex;
+    justify-content: space-between;
+}
+.phi-giao-hang {
+    display: flex;
+}
+.phieu-uu-dai {
+    display: flex;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    border-bottom: 4px solid #eaeaee;
+}
+.phieu-uu-dai i {
+    color: #999;
+    margin-right: 10px;
+    display: block;
+}
+.ma-uu-dai {
+    padding-top: 12px;
+}
+.ma-uu-dai input{
+    outline: none;
+    border: 1px solid #eaeaee;
+    width: 100%;
+    height: 45px;
+    font-size: 18px;
+    padding-left: 16px;
+    box-shadow: inset 0 1px 2px rgb(0 0 0 / 10%);
+}
+.ma-uu-dai input:focus {
+    box-shadow: 0 0 5px #ccc;
+}
+.ma-uu-dai button {
+    width: 100%;
+    height: 50px;margin-top: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    font-size: 18px;
+    cursor: pointer;
+}
+.ma-uu-dai button:hover {
+    background-color: #c7c7c7;
+    text-shadow: 1px 1px 1px #fff;
+}
+.thanh-toan {
+    margin-top: 30px;
+    width: 100%;
+    height: 50px;
+    background-color: #000;
+    text-align: center;
+}
+.thanh-toan span {
+    font-size: 18px;
+    color: #fff;
+    padding-top: 15px;
+}
+.total_money {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.total_money-title {
+    font-size: 18px;
+    font-weight: 700;
+}
+.total-main {
+    font-weight: 700;
+}
+.box-img-cart-empty {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+.cart-empty-main {
+    display: none;
+}
+.box-img-cart-empty img {
+    width: 500px;
+    margin-right: 50px;
+}
+.cart-empty-main-title {
+    display: flex;
+    justify-content: center;
+    margin-top:25px;
+    font-size: 25px;
+    font-weight: 600;
+    margin-right: 45px;
+}
+.cart:hover .nav-dropdown {
+    display: none;
+}
+.cart_mobile {
+    display: none;
+}
+/* Thanh toán */
+
+
+
+
+
+
+
+
+.none {
+    display: none;
+}
+.block-cart {
+    display: block;
+}
+@media  screen and (max-width:740px) {
+    .cart_pc {
+        display: none;
+    }
+    .cart_mobile {
+        display: block;
+    }
+    .cart_body {
+        margin: 0;
+        position: relative;
+    }
+    .cartList {
+        position: relative;
+        display: flex;
+        padding-top: 15px;
+        padding-left: 15px;
+        padding-top: 35px;
+    }
+    .cart_table_header {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 15px;
+        padding-left: 5px;
+        padding-bottom: 5px;
+        border-bottom: 2px solid #ddd;
+    }
+    .cart-items-name {
+        display: block;
+        padding-left: 10px;
+        font-size: 15px;
+    }
+    .cart_table::after {
+        display: none;
+    }
+    .cart-items-remove-box {
+        position:absolute;
+        top: -17px;
+        left: -15px;
+    }
+    .num {
+        justify-content: flex-end;
+        padding-right: 7px;
+        align-items: center;
+    }
+    .price_num {
+        display: flex;
+    }
+    .price {
+        padding-top: 5px;
+        font-weight: 600;
+    }
+    .dau_nhan,.num1 {
+        margin-left: 5px;
+        padding-top: 7px;
+        font-weight: 700;
+    }
+    .box-img-cart-empty img {
+        width: 300px;
+        margin-right: 22px;
+    }
+    .cart-empty-main-title {
+        margin-right: 22px;
+    }
+}

@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Project_Dien_Thoai.Models.SanPham>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="card py-5">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-md-6">
+                <strong class="text-uppercase text-danger">Danh sách sản phẩm</strong>
+            </div>
+            <div class="col-md-6 text-end">
+                <a href="@Url.Action("create","Sanpham")" class="btn btn-sm btn-success">Thêm</a>
+            </div>
+        </div>
+    </div>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th class="p-4">Mã sản phẩm</th>
+                    <th class="p-4">Tên sản phẩm</th>
+                    <th class="p-4" type="number">Số lượng sản phẩm</th>
+                    <th class="p-4">Đơn vị tính</th>
+                    <th class="p-4">Mã nhà cung cấp</th>
+                    <th class="p-4">Giá đầu vào</th>
+                    <th class="p-4">Giá đầu ra</th>
+                    <th class="p-4">Thông tin sản phẩm</th>
+                    <th class="p-4" style="width:90px;">Hình sản phẩm</th>
+                    <th class="p-4">Loại sản phẩm</th>
+                    <th class="p-4" style="width:180px;">Chức năng</th>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="text-center">
+                            @item.MaSP
+                        </td>
+                        <td>@item.TenSP</td>
+                        <td>@item.SoLuongSP</td>
+                        <td>@item.DonViTinh</td>
+                        <td>@item.MaNCC</td>
+                        <td>@item.GiaDauVao</td>
+                        <td>@item.GiaDauRa</td>
+                        <td>@item.ThongTinSP</td>
+                        <td><img style="height: 120px; width: 100px;" src="~/Image/@item.HinhSP"/></td>
+                        <td>@item.LoaiSP</td>
+                        <td class="text-center">
+                            <a href="@Url.Action("Edit","Sanpham", new { @id = item.MaSP })"
+                               class="btn btn-sm btn-primary">Edit</a>
+                            <a href="@Url.Action("Delete","Sanpham", new { @id = item.MaSP })"
+                               class="btn btn-sm btn-danger">Xóa</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

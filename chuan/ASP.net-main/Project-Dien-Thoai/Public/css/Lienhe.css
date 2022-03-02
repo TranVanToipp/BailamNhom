@@ -1,0 +1,233 @@
+﻿.lienhe-top-box {
+    padding-top: 100px;
+    background-color: rgb(246, 246, 246);
+    padding-bottom: 100px;
+}
+
+.lienhe-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: max-content;
+    margin: auto;
+}
+
+.lienhe-connect-icon-box {
+    display: flex;
+    width: max-content;
+    margin: auto;
+    padding-top: 50px;
+}
+
+.lienhe-connect-title {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.lienhe-connect-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    border-radius: 50%;
+    margin: 0 3px;
+    cursor: pointer;
+    position: relative;
+}
+
+.lienheFB i,
+.lienhe-ITG i,
+.lienhe-TIKTOK i,
+.lienhe-TWWITER i,
+.lienhe-PHONE i,
+.lienhe-YT i {
+    color: #fff
+}
+
+.lienheFB {
+    background-color: rgb(58, 88, 157);
+    transition: all 0.3s ease;
+}
+
+    .lienheFB:hover {
+        background-color: rgb(25, 54, 121);
+    }
+
+.lienhe-ITG {
+    background-color: rgb(59, 105, 148);
+    transition: all 0.3s ease;
+}
+
+    .lienhe-ITG:hover {
+        background-color: rgb(34, 85, 133);
+    }
+
+.lienhe-TIKTOK {
+    background-color: #000;
+    transition: all 0.3s ease;
+}
+
+.lienhe-TWWITER {
+    background-color: rgb(36, 120, 186);
+    transition: all 0.3s ease;
+}
+
+.lienhe-TWWITER:hover {
+    background-color: rgb(17, 82, 131);
+}
+
+.lienhe-PHONE {
+    background-color: rgb(81, 203, 90);
+    transition: all 0.3s ease;
+}
+
+.lienhe-PHONE:hover {
+    background-color: rgb(27, 143, 34);
+}
+
+.lienhe-YT {
+    background-color: rgb(195, 50, 35);
+    transition: all 0.3s ease;
+}
+
+.lienhe-YT:hover {
+    background-color: rgb(150, 31, 18);
+}
+
+.lienhe-connect-icon-hover {
+    top: -47px;
+    left: -87%;
+    animation: lienhe-icon 0.5s;
+}
+
+.lienhe-connect-icon-square {
+    display: block;
+    top: 18px;
+    left: 45%;
+}
+
+.lienhe-connect-icon-hover-phone {
+    top: -47px;
+    left: -50%;
+}
+
+.lienhe-connect-icon:hover .lienhe-connect-icon-hover {
+    display: block;
+}
+
+@keyframes lienhe-icon {
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.lienhe-mid {
+    max-width: max-content;
+    margin: auto;
+    display: flex;
+    margin-top: -63px;
+}
+
+.lienhe-mid-items:first-child {
+    padding-right: 40px;
+}
+
+.lienhe-mid-img-box img {
+    width: 380px;
+    height: 250px;
+}
+
+.lienhe-mid-city,
+.lienhe-mid-street,
+.lienhe-mid-district,
+.lienhe-mid-phone,
+.lienhe-mid-email {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lienhe-mid-city {
+    padding-top: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    color: rgb(104, 104, 104);
+    letter-spacing: 0.7px;
+}
+
+.lienhe-mid-street {
+    padding-top: 8px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.lienhe-mid-district {
+    font-size: 14px;
+    padding-top: 7px;
+    color: rgb(34, 34, 34);
+}
+
+.lienhe-mid-phone {
+    font-size: 14px;
+    padding-top: 20px;
+    color: rgb(34, 34, 34);
+}
+
+.lienhe-mid-email {
+    font-size: 14px;
+    padding-top: 5px;
+    color: rgb(34, 34, 34);
+}
+
+.lienhe-bottom {
+    max-width: max-content;
+    margin: auto;
+    padding-top: 70px;
+}
+
+.lienhe-address-title {
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.lienhe-address-title span {
+    padding: 0 10px;
+}
+
+.lienhe-address-title hr {
+    height: 2px;
+    flex: 1;
+    width: 250px;
+}
+
+hr.lienhe-hr {
+    border: 1px solid rgb(231, 231, 231);
+}
+
+.lienhe-map {
+    padding-top: 20px;
+}
+
+.lienhe-map iframe {
+    width: 100%;
+    height: 450px;
+}
+
+.hover-square {
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    top: -4px;
+    transform: rotate(-45deg);
+    background-color: var(--black-color-);
+    z-index: -1;
+    left: 37px;
+}

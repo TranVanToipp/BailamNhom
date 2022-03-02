@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Project_Dien_Thoai.Models.SanPham>
+
+@{ ViewBag.Title = "Index";
+   Layout = "~/Views/Shared/_LayoutNguoiDung.cshtml";
+ }
+<link href="~/Public/css/ContainerSanpham.css" rel="stylesheet" />
+
+<div class="grid wide" id="main-product-a">
+    <div class="product-selling-title">
+        <hr><span>SẢN PHẨM CHÍNH</span><hr>
+    </div>
+    <div class="product-selling-main">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                if (item.SoLuongSP > 0)
+                {
+                    <div class="col  l-3 c-6 product-selling-items">
+                        <div class="product-selling-box-img">
+                            <a href="@Url.Action("Index","ChiTietSP",new { @masp=item.MaSP})"><img class="product-selling-img" src="~/Image/@item.HinhSP" alt=""></a>
+                        </div>
+                        <div class="product-selling-info">
+                            <div class="product-selling-name">
+                                <span>@item.TenSP</span>
+                            </div>
+                            <div class="product-selling-price">
+                                <div class="product-selling-price-now">@String.Format("{0:0,0}", item.GiaDauRa)<sup>đ</sup></div>
+                            </div>
+                            <div class="btn-add-cart-box">
+                                @if (Session["User"].Equals(""))
+                                {
+                                    <a href="@Url.Action("Index", "Authen")" class="tag-a link-add-cart"><span>THÊM VÀO GIỎ HÀNG</span></a>
+                                }
+                                else
+                                {
+                                    <a href="@Url.Action("add_Cart", "GioHang", new { @makh = Session["Ma_User"], @masp = item.MaSP, @strURL = Request.Url.ToString() })" class="tag-a link-add-cart"><span class="btn-add-cart">THÊM VÀO GIỎ HÀNG</span></a>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>

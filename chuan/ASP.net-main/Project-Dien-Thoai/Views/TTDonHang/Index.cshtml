@@ -1,0 +1,76 @@
+﻿@using Project_Dien_Thoai.Models
+@model List<TTDonHang>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutNguoiDung.cshtml";
+}
+<link href="~/Public/css/detail.css" rel="stylesheet" />
+<div class="grid wide detail">
+    <div class="detail-title"><span>CHI TIẾT ĐƠN HÀNG</span></div>
+    <div class="row">
+        <div class="col l-6">
+            <table class="cart_table" style="width:100%;">
+                <tbody>
+                    <tr>
+                        <div class="">
+                            <th class="cart_product">SẢN PHẨM</th>
+                            <th>SỐ LƯỢNG</th>
+                            <th>Tạm Tính</th>
+                            <th>Trạng Thái Đơn Hàng</th>
+                        </div>
+                    </tr>
+        @foreach (var item in Model)
+        {
+        <tr class="cartList">
+            <td class="cart_product">
+                <div class="cart-items-name cart_body" style="padding-top:15px">
+                    <span>@item.TenSP</span>
+                </div>
+            </td>
+            <td class="num" style="font-weight: 600; text-align: center; padding-top:15px">@item.soluong</td>
+            <td class="total_money_details" style="font-weight: 600; text-align: center; padding-top:15px">@String.Format("{0:0,0}", item.thanhtien)<sup>đ</sup></td>
+            <td class="cart_product">
+                <div class="cart-items-name cart_body" style="padding-top:15px" align="center">
+                    <span>@item.trangthai</span>
+                </div>
+            </td>
+        </tr>
+
+        }
+        </tbody>
+        </table>
+        <div class="total_money">
+            <span>Tổng tiền:</span>
+            <span>
+                @{ double tongtien = 0; foreach (var tong in Model)
+                    {
+                        tongtien += tong.thanhtien;
+                    }
+                    @String.Format("{0:0,0}", tongtien)} VND
+            </span>
+        </div>
+    </div>
+    <div class="col l-6" style="padding-left:70px;">
+        <div class="infor-order">
+            <div class="infor-title">
+                <span>THÔNG TIN KHÁCH HÀNG</span>
+            </div>
+            <div class="phone_number">
+                <span>Số điện thoại:</span>
+                <p>@ViewBag.sdt</p>
+            </div>
+            <div class="address">
+                <span>Địa chỉ giao hàng:</span>
+                <p>@ViewBag.diachi</p>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="success-btn">
+            <a href="../" class="tag-a" style="margin-left: 10px;">
+                <div class="continue-buy">
+                    <span>TIẾP TỤC MUA SẮM</span>
+                </div>
+            </a>
+        </div>
+	    

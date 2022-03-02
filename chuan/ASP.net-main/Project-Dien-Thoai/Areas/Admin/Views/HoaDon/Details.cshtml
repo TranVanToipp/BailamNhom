@@ -1,0 +1,82 @@
+﻿@model Project_Dien_Thoai.Models.HoaDon
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>HoaDon</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Id_GioHang)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Id_GioHang)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.MaSP)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.MaSP)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.MaKH)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.MaKH)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SoLuongXuat)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SoLuongXuat)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.TrangThaiXuat)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TrangThaiXuat)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.NgayHD)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NgayHD)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ThanhTien)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ThanhTien)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.MaHoaDon }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

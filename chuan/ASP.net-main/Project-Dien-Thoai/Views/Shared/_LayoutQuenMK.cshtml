@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <title>@Page.Title</title>
+    @RenderSection("head", required: false)
+</head>
+<style>
+
+    .container {
+        width: 500px;
+        margin-top: 50px;
+    }
+</style>
+<body>
+    @using (Html.BeginForm("Index", "QuenMK", FormMethod.Post))
+    {<div class="container">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h2 class="text-center">Quên Mật Khẩu</h2>
+                    <div style="color: red;text-align:center;">@ViewBag.Error</div>
+                </div>
+                <form action="" method="post">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label for="TenDN">Email hoặc Tên Đăng Nhập:</label>
+                            <input required type="text" class="form-control" id="TenDN" name="TenDN" placeholder="Nhập Email hoặc Tên Đăng Nhập">
+                        </div>
+                        <div class="form-group">
+                            <span><a href="../Authen">Quay Lại Đăng Nhập</a></span>
+                        </div>
+                        <button class="btn btn-success">Lấy Lại Mật Khẩu</button>
+                    </div>
+                </form>
+            </div>
+        </div>}
+        @RenderBody()
+    </body>
+</html>

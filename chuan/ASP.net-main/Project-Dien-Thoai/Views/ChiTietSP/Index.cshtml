@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutNguoiDung.cshtml";
+}
+<head>
+    <title>Chi Tiết Sản Phẩm</title>
+</head>
+<link href="~/Public/css/chitietsanpham.css" rel="stylesheet" />
+<div class="grid wide">
+    <div class="chitietsanpham">
+        <div class="chitiet-header">
+            <div class="row">
+                <div class="col l-6 c-12">
+                   <div class="chitiet-big-img">
+                        <img src="~/Image/@ViewBag.hinhsp" alt="" style="object-fit: cover;width:400px; height:400px">
+                    </div>
+                </div>
+                <div class="col l-6 c-12">
+                    <div class="chitiet-description">
+                        <div class="chitiet-des-name">
+                            <span>@ViewBag.tensp</span>
+                        </div>
+                        <div class="chitiet-des-price">
+                            <span>@String.Format("{0:0,0}", ViewBag.dongia) <sup>đ</sup></span>
+                        </div>
+                        <ul class="infor-product">
+                            @ViewBag.tt
+                        </ul>
+                        <div class="rest-product">
+                            <span>Còn @ViewBag.soluong hàng</span>
+                        </div>
+                        <div class="btn-add-cart-box">
+                            @if (Session["User"].Equals(""))
+                            {
+                                <a class="tag-a link-add-cart" href="@Url.Action("Index","Authen")">
+                                    <span class="btn-add-cart">THÊM VÀO GIỎ HÀNG</span>
+                                </a>
+                            }
+                            else
+                            {
+                                <a class="tag-a link-add-cart" href="@Url.Action("add_Cart","GioHang",new {@makh=Session["Ma_User"],@masp=ViewBag.masp,@strURL=Request.Url.ToString()})">
+                                    <span class="btn-add-cart">THÊM VÀO GIỎ HÀNG</span>
+                                </a>}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
